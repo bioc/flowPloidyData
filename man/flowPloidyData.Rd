@@ -2,6 +2,8 @@
 
 \alias{flowPloidyData}
 \alias{flowPloidyFiles}
+\alias{fpBad}
+\alias{fpVac}
 
 \docType{data}
 
@@ -13,7 +15,15 @@
   co-chopped with standards with known GC (e.g., tomato, soybean etc.).
 }
 
-\usage{flowPloidyFiles}
+\usage{
+
+flowPloidyFiles
+
+fpBad
+
+fpVac
+
+}
 
 \format{
   The variable \code{flowPloidyFiles} contains a vector of filenames
@@ -36,6 +46,11 @@
   a variety of samples, and some of them are low quality. They are not
   ideal data sets, but rather represent a range of data quality for
   assessing the performance of \code{flowPloidy}.
+
+  \code{fpBad} and \code{fpVac} each contain the path to a single LMD
+  file. These are particularly poor quality files that are used in some
+  of the unit tests for \code{flowPloidy}. They're probably not useful
+  to regular users.
 }
 
 \value{
