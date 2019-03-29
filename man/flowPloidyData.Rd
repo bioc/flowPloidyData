@@ -17,18 +17,18 @@
 
 \usage{
 
-flowPloidyFiles
+flowPloidyFiles()
 
-fpBad
+fpBad()
 
-fpVac
+fpVac()
 
 }
 
 \format{
-  The variable \code{flowPloidyFiles} contains a vector of filenames
+  The function \code{flowPloidyFiles} returns a vector of filenames
   corresponding to the LMD files provided by this package. Individual
-  elements of this vector (e.g., \code{flowPloidyFiles[1]} can be passed
+  elements of this vector (e.g., \code{flowPloidyFiles()[1]} can be passed
   to functions that load a single FCS file, such as
   \code{flowCore::read.FCS}. The entire vector can be passed to
   functions that load multiple files, such as
@@ -36,8 +36,8 @@ fpVac
 
   Each element is named with the filename (without the path), so that
   you can select an individual filename either by numeric index
-  (i.e., \code{flowPloidyFiles[7]}) or by name
-  (\code{flowPloidyFiles["248+S.LMD"]}). The names aren't meaningful to
+  (i.e., \code{flowPloidyFiles()[7]}) or by name
+  (\code{flowPloidyFiles()["248+S.LMD"]}). The names aren't meaningful to
   you, of course! I added them to provide a more robust way to select an
   individual file, as the order of files may change in package updates.
 
@@ -47,7 +47,7 @@ fpVac
   ideal data sets, but rather represent a range of data quality for
   assessing the performance of \code{flowPloidy}.
 
-  \code{fpBad} and \code{fpVac} each contain the path to a single LMD
+  \code{fpBad()} and \code{fpVac()} each return the path to a single LMD
   file. These are particularly poor quality files that are used in some
   of the unit tests for \code{flowPloidy}. They're probably not useful
   to regular users.
@@ -59,11 +59,11 @@ fpVac
 }
 
 \examples{
-flowPloidyFiles   ## a character vector of file names
+flowPloidyFiles()   ## a character vector of file names
 
 ## Read in the first file:
 library(flowCore)
-fcs <- read.FCS(flowPloidyFiles[1], dataset = 1,
+fcs <- read.FCS(flowPloidyFiles()[1], dataset = 1,
                           alter.names = TRUE)
 }
 

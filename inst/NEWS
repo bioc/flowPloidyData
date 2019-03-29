@@ -1,3 +1,14 @@
+Changes in version 1.5.4 (2019-03-29)
+
+User Visible Changes:
+
+    * the provided variables (flowPloidyFiles, fpVac, fpBad) that list the
+      filenames for the example data have been changed to functions with
+      the same name. This was required to accomodate changes in the way R
+      loads package code. As a consequence, users will now have to call the
+      functions (i.e., `flowPloidFiles()`, note the parentheses) instead of
+      refering to the variables (i.e., `flowPloidyFiles`).
+
 Changes in version 1.5.3 (2018-01-19)
 
 User Visible Changes:

@@ -1,12 +1,18 @@
-flowPloidyFiles <- 
-  list.files(system.file("extdata/", package = "flowPloidyData"), 
-             pattern = "*.LMD", full.names = TRUE)
-names(flowPloidyFiles) <- basename(flowPloidyFiles)
+fpfList <- function(pattern) {
+  list.files(system.file("extdata/", package = "flowPloidyData"),
+             pattern = pattern, full.names = TRUE)
+}
 
-fpVac <- list.files(system.file("extdata/",
-                                package = "flowPloidyData"), 
-                    pattern = "vac", full.names = TRUE)
+flowPloidyFiles <- function(){
+  tmp <- fpfList(pattern = "*.LMD")
+  names(tmp) <- basename(tmp)
+  tmp
+}
 
-fpBad <- list.files(system.file("extdata/",
-                                package = "flowPloidyData"),
-                    pattern = "08.328", full.names = TRUE)
+fpVac <- function(){
+  fpfList(pattern = "vac")
+}
+
+fpBad <- function(){
+  fpfList(pattern = "08.328")
+}
